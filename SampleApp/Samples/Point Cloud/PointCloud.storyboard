@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Point Cloud-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="PointCloud" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="3se-qz-xqx" customClass="MTKView">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z8J-iW-Ia6">
+                                <rect key="frame" x="10" y="745" width="370" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayb-js-eZ6">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                        <connections>
+                                            <action selector="tappedStartBtn:" destination="BV1-FR-VrT" eventType="touchUpInside" id="mQp-xp-sbp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-gg-D86">
+                                        <rect key="frame" x="190" y="0.0" width="180" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Scene"/>
+                                        <connections>
+                                            <action selector="tappedSceneBtn:" destination="BV1-FR-VrT" eventType="touchUpInside" id="sFH-DW-xMG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dQj-Uq-B0B"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3C0-cp-GOg"/>
+                        <constraints>
+                            <constraint firstItem="3C0-cp-GOg" firstAttribute="bottom" secondItem="Z8J-iW-Ia6" secondAttribute="bottom" constant="20" id="5AQ-U2-Ios"/>
+                            <constraint firstItem="Z8J-iW-Ia6" firstAttribute="leading" secondItem="3C0-cp-GOg" secondAttribute="leading" constant="10" id="bjM-ez-RIf"/>
+                            <constraint firstItem="3C0-cp-GOg" firstAttribute="trailing" secondItem="Z8J-iW-Ia6" secondAttribute="trailing" constant="10" id="dhc-2t-Aw2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="ayb-js-eZ6" id="Tbh-Sb-dsh"/>
+                        <outlet property="sceneBtn" destination="RJw-gg-D86" id="Zy0-N8-gfv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.46153846153845" y="137.91469194312796"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="qEe-RB-Egy">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="26j-rC-sFA" customClass="ResultViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="AR7-Kn-GpI">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </sceneKitView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELk-Lz-aaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="137.91469194312796"/>
+        </scene>
+    </scenes>
+</document>
